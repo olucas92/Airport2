@@ -9,5 +9,7 @@ describe Plane do
     expect(plane).to be_flying
   end
 
+end
+
 
 
