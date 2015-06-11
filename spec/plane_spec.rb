@@ -16,6 +16,15 @@ describe Plane do
     expect(plane).to be_grounded
   end
 
+  it "should be able to take off" do
+    plane.land!
+    expect(plane).to be_grounded
+    expect(plane).not_to be_flying
+    plane.fly!
+    expect(plane).to be_flying
+    expect(plane).not_to be_grounded
+  end
+
 end
 
 
