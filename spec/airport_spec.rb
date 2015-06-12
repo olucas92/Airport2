@@ -26,6 +26,12 @@ describe Airport do
 
   end
 
+  context 'traffic control' do
+
+    it "planes should not be able to land if the airport is full" do
+
+    end
+
 
 
 
