@@ -14,6 +14,15 @@ describe Airport do
       expect(airport.plane_count).to eq(1)
     end
 
+    it "planes should be able to take off" do
+      plane.land!
+      airport.dock(plane)
+      expect(airport.plane_count).to eq(1)
+      plane.fly!
+      airport.release(plane)
+      expect(airport.plane_count).to eq(0)
+    end
+
 
   end
 
