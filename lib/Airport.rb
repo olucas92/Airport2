@@ -6,6 +6,10 @@ class Airport
     @planes = []
   end
 
+  def airport
+    @airport
+  end
+
   def dock(plane)
     plane.land!
     @planes << plane
@@ -13,6 +17,10 @@ class Airport
 
   def plane_count
     @planes.count
+  end
+
+  def release(plane)
+    @planes.delete(plane)
   end
 
 
