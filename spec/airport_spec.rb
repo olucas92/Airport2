@@ -29,8 +29,11 @@ describe Airport do
   context 'traffic control' do
 
     it "planes should not be able to land if the airport is full" do
-
+      airport.fill
+      expect{ airport.dock(plane) }.to raise_error(RuntimeError, "Sorry, the airport is full")
     end
+
+  end
 
 
 
