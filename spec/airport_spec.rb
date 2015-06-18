@@ -35,6 +35,9 @@ describe Airport do
 
   end
 
+def fill_airport(airport)
+  airport.capacity.times { airport.dock(Plane.new) }
+end
 
 
 
