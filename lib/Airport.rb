@@ -1,4 +1,8 @@
+require_relative 'weather.rb'
+
 class Airport
+
+  include Weather
 
   DEFAULT_CAPACITY = 20
 
