@@ -28,6 +28,7 @@ class Airport
   end
 
   def release(plane)
+    raise "It's too stormy to take off!" if stormy?
     @planes.delete(plane)
   end
 
