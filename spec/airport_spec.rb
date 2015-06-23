@@ -42,6 +42,11 @@ describe Airport do
       expect{ airport.dock(plane) }.to raise_error(RuntimeError, "It's too stormy to land!")
     end
 
+    it "planes should not be able to take off in a storm" do
+      allow(airport).to receive(:stormy?).and_return true
+      expect{ airport.release(plane) }.to raise_error(RuntimeError, "It's too stormy to take off!")
+    end
+
   end
 
 def fill_airport(airport)
