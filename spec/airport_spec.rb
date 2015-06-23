@@ -30,7 +30,7 @@ describe Airport do
 
     it "planes should not be able to land if the airport is full" do
       fill_airport(airport)
-      expect{ airport.dock(plane) }.to raise_error(RuntimeError, "Sorry, the airport is full")
+      expect{ airport.dock(plane) }.to raise_error(RuntimeError, "Sorry, the airport is full!")
     end
 
   end
@@ -38,9 +38,10 @@ describe Airport do
   context 'weather control' do
 
     it "planes should not be able to land if the weather is stormy" do
-    
+      allow(airport).to receive(:stormy?).and_return true
+      expect{ airport.dock(plane) }.to raise_error(RuntimeError, "It's too stormy to land!")
     end
-    
+
   end
 
 def fill_airport(airport)

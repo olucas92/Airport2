@@ -1,7 +1,7 @@
 module Weather
 
   def conditions
-    @weather = ["sunny", "sunny", "sunny", "stormy"].shuffle.first
+     @weather = [*1..4].sample == 1 ? "stormy" : "sunny"
   end
 
   def stormy?
