@@ -41,6 +41,7 @@ class Airport
 
   def clear_for_landing
     raise "Sorry, the airport is full" if full?
+    raise "Sorry, it is too stormy to land" if stormy?
   end
 
   def capacity
