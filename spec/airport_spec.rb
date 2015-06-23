@@ -47,6 +47,11 @@ describe Airport do
       expect{ airport.release(plane) }.to raise_error(RuntimeError, "It's too stormy to take off!")
     end
 
+    it "weather should be random every day" do
+      airport.next_day
+      expect(["sunny", "stormy"].include?(airport.conditions)).to eq true
+    end
+
   end
 
 def fill_airport(airport)
