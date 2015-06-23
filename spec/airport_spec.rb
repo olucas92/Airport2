@@ -35,6 +35,14 @@ describe Airport do
 
   end
 
+  context 'weather control' do
+
+    it "planes should not be able to land if the weather is stormy" do
+    
+    end
+    
+  end
+
 def fill_airport(airport)
   airport.capacity.times { airport.dock(plane) }
 end
